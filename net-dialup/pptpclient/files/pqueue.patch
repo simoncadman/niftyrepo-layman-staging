@@ -1,0 +1,11 @@
+--- pqueue.h	2008-05-14 07:33:55.000000000 +0100
++++ pqueue.h.new	2012-02-20 21:33:25.000000000 +0000
+@@ -9,7 +9,7 @@
+ extern int packet_timeout_usecs;
+ 
+ /* assume packet is bad/spoofed if it's more than this many seqs ahead */
+-#define MISSING_WINDOW 300
++#define MISSING_WINDOW 6000
+ 
+ /* Packet queue structure: linked list of packets received out-of-order */
+ typedef struct pqueue {

@@ -1,0 +1,13 @@
+diff --git a/setup.py b/setup.py
+index 78e99f5..441d5d9 100644
+--- a/setup.py
++++ b/setup.py
+@@ -38,7 +38,7 @@ import sys
+ VERSION="1.9.62"
+ libraries=["cups"]
+ 
+-if sys.platform == "darwin":
++if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
+ 	libraries.append ("iconv")
+ 
+ setup (name="pycups",

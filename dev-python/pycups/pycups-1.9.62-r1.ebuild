@@ -29,6 +29,8 @@ pkg_setup() {
 }
 
 src_unpack() {
+	unpack ${A}
+	cd ${P}
 	epatch "${FILESDIR}"/pycups-gentoo-freebsd-fix.patch
 }
 

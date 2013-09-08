@@ -15,7 +15,12 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
 IUSE="debug"
- 
+
+src_prepare() {
+    epatch "${FILESDIR}/qtcrypto.patch"
+}
+
+
 DEPEND="
 "
  

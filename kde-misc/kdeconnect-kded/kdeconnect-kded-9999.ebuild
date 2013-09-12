@@ -9,7 +9,7 @@ inherit kde4-base git-2
 DESCRIPTION="KDE Connect: Fusion your devices with KDE"
 HOMEPAGE="http://albertvaka.wordpress.com/2013/08/05/introducing-kde-connect/"
  
-EGIT_REPO_URI="git://anongit.kde.org/scratch/albertvaka/kdeconnect-kded"
+EGIT_REPO_URI="git://anongit.kde.org/kdeconnect-kde"
  
 LICENSE="GPL-2"
 SLOT="0"

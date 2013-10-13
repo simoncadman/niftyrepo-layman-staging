@@ -1,9 +1,9 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
+EAPI="3"
 
 inherit git-2 eutils
-
 DESCRIPTION="Google Cloud Print"
 HOMEPAGE="https://ccp.niftiestsoftware.com"
 EGIT_REPO_URI="git://github.com/simoncadman/CUPS-Cloud-Print.git"
@@ -18,7 +18,7 @@ net-print/cups
 app-text/ghostscript-gpl
 dev-python/pycups
 dev-python/httplib2
-media-gfx/imagemagick"
+media-gfx/imagemagick[postscript,jpeg,png]"
 S=${WORKDIR}/${P}
 
 src_install() {

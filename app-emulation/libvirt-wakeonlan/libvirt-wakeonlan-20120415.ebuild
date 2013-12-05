@@ -13,7 +13,7 @@ SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
 DEPEND=">=dev-lang/python-2.6
-app-emulation/libvirt[python]
+|| ( app-emulation/libvirt[python] dev-python/libvirt-python )
 dev-python/pylibpcap
 "
 S=${WORKDIR}/${P}

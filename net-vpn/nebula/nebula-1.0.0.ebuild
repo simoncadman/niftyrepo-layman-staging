@@ -47,6 +47,12 @@ SRC_URI="${ARCHIVE_URI}
 SLOT="0"
 IUSE=""
 
+src_prepare() {
+	cd ${WORKDIR}/${P}/src/${EGO_PN}/
+	git checkout v${PV}
+	eapply_user
+}
+
 src_compile() {
 	cd ${WORKDIR}/${P}/src/${EGO_PN}/
 	export BUILD_NUMBER="dev+$(date -u '+%Y%m%d%H%M%S')"
@@ -63,5 +69,7 @@ src_install() {
 	dobin build/linux/nebula-cert
 
 	insinto /etc/${PN}
+	ls -al examples/
 	doins examples/config.yaml
+	newinitd ${FILESDIR}/nebula.initd nebula
 }

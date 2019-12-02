@@ -1,0 +1,14 @@
+#!/sbin/openrc-run
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+command="/usr/bin/nebula"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_args="-config /etc/nebula/config.yaml"
+NEBULA_LOGFILE="${NEBULA_LOGFILE:-/var/log/${RC_SVCNAME}.log}"
+start_stop_daemon_args="-P -w 1000 --pidfile ${pidfile}  -m --background \
+	--stderr \"${NEBULA_LOGFILE}\" --stdout \"${NEBULA_LOGFILE}\""
+
+depend () {
+	need net
+}

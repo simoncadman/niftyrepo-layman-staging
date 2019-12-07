@@ -34,7 +34,7 @@ EGO_VENDOR=(
 		"gopkg.in/yaml.v2 v2.2.2"
 )
 
-inherit golang-build golang-vcs user
+inherit golang-build golang-vcs user systemd
 
 DESCRIPTION="A scalable overlay networking tool with a focus on performance, simplicity etc"
 LICENSE="MIT"
@@ -69,7 +69,7 @@ src_install() {
 	dobin build/linux/nebula-cert
 
 	insinto /etc/${PN}
-	ls -al examples/
 	doins examples/config.yaml
 	newinitd ${FILESDIR}/nebula.initd nebula
+	systemd_dounit "${FILESDIR}"/nebula.service
 }

@@ -1,9 +1,15 @@
 [Unit]
-Description=A scalable overlay networking tool with a focus on performance, simplicity etc
-After=network.target
+Description=nebula
+Wants=basic.target
+After=basic.target network.target
 
 [Service]
-ExecStart=/usr/bin/nebula -config /etc/nebula/config.yaml
+SyslogIdentifier=nebula
+StandardOutput=syslog
+StandardError=syslog
+ExecReload=/bin/kill -HUP $MAINPID
+ExecStart=/usr/bin/nebula -config /etc/nebula/config.yml
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

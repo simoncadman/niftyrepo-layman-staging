@@ -4,7 +4,7 @@
 
 command="/usr/bin/nebula"
 pidfile="/run/${RC_SVCNAME}.pid"
-command_args="-config /etc/nebula/config.yaml"
+command_args="-config /etc/nebula/config.yml"
 NEBULA_LOGFILE="${NEBULA_LOGFILE:-/var/log/${RC_SVCNAME}.log}"
 start_stop_daemon_args="-P -w 1000 --pidfile ${pidfile}  -m --background \
 	--stderr \"${NEBULA_LOGFILE}\" --stdout \"${NEBULA_LOGFILE}\""

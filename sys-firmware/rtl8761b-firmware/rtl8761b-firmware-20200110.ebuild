@@ -4,6 +4,7 @@
 EAPI=5
 
 EGIT_REPO_URI="https://github.com/Realtek-OpenSource/android_hardware_realtek.git"
+EGIT_COMMIT="e58b611f34f2f5ff57bb0d8cdf1b2e4751e3ccbd"
 inherit git-r3
 
 DESCRIPTION="Firmware for rtl8761b bluetooth adapter"
